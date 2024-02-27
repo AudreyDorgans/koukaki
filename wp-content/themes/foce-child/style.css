@@ -1,0 +1,223 @@
+/* KEYFRAMES */
+@keyframes mooveDownAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes mooveUpLogo {
+  0% {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  25%, 40% {
+    opacity: 0.25;
+  }
+  55% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes mooveUpAnimation {
+  0% {
+    opacity: 0.5;
+    transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes mooveUpAnimationOrangeFlower {
+  0% {
+    opacity: 0.7;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes mooveUpAnimationLeavesOrangeFlower {
+  0% {
+    opacity: 0.7;
+    transform: translateY(55%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes mooveUpAnimationFooter {
+  0% {
+    opacity: 0.5;
+    transform: translateY(200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(2%);
+  }
+}
+@keyframes mooveUpAnimationFlowersFooter {
+  0% {
+    opacity: 0.5;
+    transform: translateY(200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes rotatingFlowers {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animationTitre1 {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(90%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes animationTitre2 {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(90%);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(80%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+/* ANIMATIONS SECTIONS ET FLEURS */
+.site-main {
+  overflow: hidden;
+}
+
+.banner {
+  animation: mooveDownAnimation ease-in-out 2s;
+  position: relative;
+}
+.banner img {
+  animation: mooveUpLogo ease-in-out 2s;
+  animation-iteration-count: 1;
+  max-height: 100%;
+}
+.banner .fixed {
+  position: fixed;
+  max-width: 720px;
+  top: 34%;
+}
+.banner .absolute {
+  position: absolute;
+  bottom: 0;
+  max-width: 720px;
+}
+
+.story h2 {
+  width: 100%;
+  z-index: 1;
+  animation: mooveUpAnimation ease-in-out 2s;
+  background-color: transparent;
+}
+.story h2::after {
+  width: 155px;
+  height: 155px;
+  animation: rotatingFlowers 2s 2s linear infinite;
+}
+.story__article::before {
+  animation: mooveUpAnimationLeavesOrangeFlower ease-in-out 2s;
+}
+.story__article::after {
+  animation: rotatingFlowers 2s linear infinite, mooveUpAnimationOrangeFlower ease-in-out 2s;
+  z-index: 2;
+}
+.story__article p {
+  z-index: 0;
+}
+
+#characters,
+#place,
+#studio {
+  animation: mooveUpAnimation ease-in-out 2s;
+}
+
+#place h3 {
+  animation: mooveUpAnimation ease-in-out 2s;
+}
+#place p {
+  animation: mooveDownAnimation ease-in-out 2s;
+}
+
+#studio h2 {
+  animation: mooveUpAnimation ease-in-out 2s;
+  background-color: transparent;
+}
+#studio h2::before, #studio h2::after {
+  animation: rotatingFlowers 2s 2s linear infinite;
+}
+#studio > div::before {
+  animation: mooveUpAnimation ease-in-out 2s;
+}
+
+.site-footer::before {
+  width: 155px;
+  height: 155px;
+}
+
+.site-footer::before,
+.site-footer::after {
+  animation: rotatingFlowers 2s 2s linear infinite, mooveUpAnimationFlowersFooter ease-in-out 2s;
+}
+
+.site-footer ul::after {
+  animation: rotatingFlowers 2s 2s linear infinite, mooveUpAnimationFooter ease-in-out 2s;
+}
+
+.site-footer ul {
+  animation: mooveUpAnimationFooter ease-in-out 2s;
+}
+
+/* ANIMATIONS TITRES */
+.anim-titre-initial {
+  opacity: 0;
+}
+
+.anim-titre-1 {
+  display: inline-block;
+  animation: animationTitre1 2s ease;
+}
+
+.anim-titre-2 {
+  display: inline-block;
+  margin-left: 0.4em;
+  animation: animationTitre2 3s ease;
+}
+
+/*# sourceMappingURL=style.css.map */

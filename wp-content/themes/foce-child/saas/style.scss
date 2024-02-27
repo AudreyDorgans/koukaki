@@ -1,0 +1,269 @@
+/* KEYFRAMES */
+
+$animation-timing: ease-in-out;
+$animation-duration: 2s;
+$animation-duration-titre: 4s;
+$animation-delay: 2s;
+
+
+@keyframes mooveDownAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes mooveUpLogo {
+    0% {
+        opacity: 0;
+        transform: translateY(30%);
+    }
+    25%,
+    40% {
+        opacity: 0.25;
+    }
+    55% {
+        opacity: 0.65;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes mooveUpAnimation {
+    0% {
+        opacity: 0.5;
+        transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes mooveUpAnimationOrangeFlower {
+    0% {
+        opacity: 0.7;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes mooveUpAnimationLeavesOrangeFlower {
+    0% {
+        opacity: 0.7;
+        transform: translateY(55%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes mooveUpAnimationFooter {
+    0% {
+        opacity: 0.5;
+        transform: translateY(200%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(2%);
+    }
+}
+
+@keyframes mooveUpAnimationFlowersFooter {
+    0% {
+        opacity: 0.5;
+        transform: translateY(200%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes rotatingFlowers {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animationTitre1 {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    20% {
+        transform: translateY(90%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes animationTitre2 {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    20% {
+        transform: translateY(90%);
+        opacity: 0;
+    }
+
+    30% {
+        transform: translateY(80%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+
+
+/* ANIMATIONS SECTIONS ET FLEURS */
+
+.site-main {
+    overflow: hidden;
+}
+
+.banner {
+    animation: mooveDownAnimation #{$animation-timing} $animation-duration;
+    position: relative;
+
+    img {
+        animation: mooveUpLogo #{$animation-timing} $animation-duration;
+        animation-iteration-count: 1;
+        max-height: 100%;
+    }
+    .fixed {
+        position: fixed;
+        max-width: 720px;
+        top: 34%;
+    }
+    .absolute {
+        position: absolute;
+        bottom: 0;
+        max-width: 720px;
+    }
+}
+
+.story {
+    
+    h2 {
+        width: 100%;
+        z-index: 1;
+        animation: mooveUpAnimation #{$animation-timing} $animation-duration;
+        background-color: transparent;
+
+        &::after {
+            width:155px;
+            height:155px;
+            animation: rotatingFlowers $animation-duration #{$animation-delay} linear infinite;
+        }
+    }
+
+    &__article {
+
+        &::before {
+            animation: mooveUpAnimationLeavesOrangeFlower #{$animation-timing} $animation-duration;
+        }
+        &::after {
+            animation: rotatingFlowers $animation-duration linear infinite, mooveUpAnimationOrangeFlower #{$animation-timing} $animation-duration;
+            z-index: 2;
+        }
+        p {
+            z-index: 0;
+        }
+    }
+}
+
+#characters,
+#place,
+#studio {
+    animation: mooveUpAnimation #{$animation-timing} $animation-duration;
+}
+
+#place {
+    h3 {
+        animation: mooveUpAnimation #{$animation-timing} $animation-duration;
+    }
+    p {
+        animation: mooveDownAnimation #{$animation-timing} $animation-duration;
+    }
+}
+
+#studio {
+
+    h2 {
+        animation: mooveUpAnimation #{$animation-timing} $animation-duration;
+        background-color: transparent;
+
+        &::before, &::after {
+            animation : rotatingFlowers $animation-duration #{$animation-delay} linear infinite;
+        }
+    }
+    >div::before {
+        animation: mooveUpAnimation #{$animation-timing} $animation-duration;
+    }
+
+}
+
+.site-footer::before {
+    width:155px;
+    height:155px;
+}
+
+.site-footer::before, 
+.site-footer::after {
+    animation: rotatingFlowers $animation-duration #{$animation-delay} linear infinite, mooveUpAnimationFlowersFooter #{$animation-timing} $animation-duration;
+}
+
+.site-footer ul::after {
+    animation: rotatingFlowers $animation-duration #{$animation-delay} linear infinite, mooveUpAnimationFooter #{$animation-timing} $animation-duration;
+}
+
+.site-footer ul {
+    animation: mooveUpAnimationFooter #{$animation-timing} $animation-duration;
+}
+
+/* ANIMATIONS TITRES */
+
+.anim-titre-initial {
+    opacity: 0;
+}
+
+.anim-titre-1 {
+    display: inline-block;
+    animation: animationTitre1 2s ease;
+}
+
+.anim-titre-2 {
+    display: inline-block;
+    margin-left:0.4em;
+    animation: animationTitre2 3s ease;
+}
