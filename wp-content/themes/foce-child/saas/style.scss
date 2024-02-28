@@ -1,9 +1,16 @@
 /* KEYFRAMES */
 
+// Déclaration des variables SCSS
 $animation-timing: ease-in-out;
 $animation-duration: 2s;
 $animation-duration-titre: 4s;
 $animation-delay: 2s;
+
+// Conversion des variables SCSS en variables CSS
+:root {
+    --animation-duration: #{$animation-duration};
+    --animation-delay: #{$animation-delay};
+}
 
 
 @keyframes mooveDownAnimation {
@@ -147,9 +154,10 @@ $animation-delay: 2s;
 
 /* ANIMATIONS SECTIONS ET FLEURS */
 
-.site-main {
+.site {
     overflow: hidden;
 }
+
 
 .banner {
     animation: mooveDownAnimation #{$animation-timing} $animation-duration;
@@ -183,7 +191,7 @@ $animation-delay: 2s;
         &::after {
             width:155px;
             height:155px;
-            animation: rotatingFlowers $animation-duration #{$animation-delay} linear infinite;
+            animation: rotatingFlowers var(--animation-duration) var(--animation-delay) linear infinite;
         }
     }
 
@@ -193,7 +201,7 @@ $animation-delay: 2s;
             animation: mooveUpAnimationLeavesOrangeFlower #{$animation-timing} $animation-duration;
         }
         &::after {
-            animation: rotatingFlowers $animation-duration linear infinite, mooveUpAnimationOrangeFlower #{$animation-timing} $animation-duration;
+            animation: rotatingFlowers var(--animation-duration) var(--animation-delay) linear infinite, mooveUpAnimationOrangeFlower #{$animation-timing} $animation-duration;
             z-index: 2;
         }
         p {
@@ -223,8 +231,17 @@ $animation-delay: 2s;
         animation: mooveUpAnimation #{$animation-timing} $animation-duration;
         background-color: transparent;
 
+        &::before {
+            width: 203px;
+            height: 203px;
+        }
+
+        &::after {
+            width: 109px;
+            height:109px;
+        }
         &::before, &::after {
-            animation : rotatingFlowers $animation-duration #{$animation-delay} linear infinite;
+            animation : rotatingFlowers var(--animation-duration) var(--animation-delay) linear infinite;
         }
     }
     >div::before {
@@ -233,22 +250,33 @@ $animation-delay: 2s;
 
 }
 
-.site-footer::before {
-    width:155px;
-    height:155px;
-}
+.site-footer {
 
-.site-footer::before, 
-.site-footer::after {
-    animation: rotatingFlowers $animation-duration #{$animation-delay} linear infinite, mooveUpAnimationFlowersFooter #{$animation-timing} $animation-duration;
-}
+    overflow:visible;
 
-.site-footer ul::after {
-    animation: rotatingFlowers $animation-duration #{$animation-delay} linear infinite, mooveUpAnimationFooter #{$animation-timing} $animation-duration;
-}
+    &::after {
+        bottom: 47em;
+        animation: rotatingFlowers var(--animation-duration) var(--animation-delay) linear infinite, mooveUpAnimationFlowersFooter #{$animation-timing} $animation-duration;
+    }
 
-.site-footer ul {
-    animation: mooveUpAnimationFooter #{$animation-timing} $animation-duration;
+    &::before {
+        width: 155px;
+        height: 155px;
+        top: -33em;
+        left: 5em;
+        animation: rotatingFlowers var(--animation-duration) var(--animation-delay) linear infinite,
+        mooveUpAnimationFlowersFooter #{$animation-timing} $animation-duration;
+    }
+
+    ul {
+
+        animation: mooveUpAnimationFooter #{$animation-timing} $animation-duration;
+
+        &::after {
+            animation: rotatingFlowers var(--animation-duration) var(--animation-delay) linear infinite, mooveUpAnimationFooter #{$animation-timing} $animation-duration;               
+        }
+    }
+
 }
 
 /* ANIMATIONS TITRES */
@@ -259,11 +287,47 @@ $animation-delay: 2s;
 
 .anim-titre-1 {
     display: inline-block;
-    animation: animationTitre1 2s ease;
+    animation: animationTitre1 1.5s ease;
 }
 
 .anim-titre-2 {
     display: inline-block;
     margin-left:0.4em;
-    animation: animationTitre2 3s ease;
+    animation: animationTitre2 2s ease;
 }
+
+/* TEMPLATE NOMINATION OSCAR */
+
+.nomination {
+    padding: 160px 0 100px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+
+    .texte-oscar {
+            background-image: url("assets-images-videos/Rectangle 23.png");  
+            background-repeat: no-repeat;
+            background-size: contain;
+            padding: 0 35px 0px 70px;
+            width :73%;
+            display: flex;       
+
+            p {
+                color: #FFF5E9;
+                font-family: 'Quicksand', sans-serif;
+                font-size: 42px;
+                font-weight: bold;
+                display: flex;
+                padding: 5px;
+            }
+    }
+    
+    .image-oscar {
+        margin: 3em 3em 0 0;
+    }
+}
+
+
+

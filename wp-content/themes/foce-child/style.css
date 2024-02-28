@@ -1,4 +1,9 @@
 /* KEYFRAMES */
+:root {
+  --animation-duration: 2s;
+  --animation-delay: 2s;
+}
+
 @keyframes mooveDownAnimation {
   0% {
     opacity: 0;
@@ -116,7 +121,7 @@
   }
 }
 /* ANIMATIONS SECTIONS ET FLEURS */
-.site-main {
+.site {
   overflow: hidden;
 }
 
@@ -149,13 +154,13 @@
 .story h2::after {
   width: 155px;
   height: 155px;
-  animation: rotatingFlowers 2s 2s linear infinite;
+  animation: rotatingFlowers var(--animation-duration) var(--animation-delay) linear infinite;
 }
 .story__article::before {
   animation: mooveUpAnimationLeavesOrangeFlower ease-in-out 2s;
 }
 .story__article::after {
-  animation: rotatingFlowers 2s linear infinite, mooveUpAnimationOrangeFlower ease-in-out 2s;
+  animation: rotatingFlowers var(--animation-duration) var(--animation-delay) linear infinite, mooveUpAnimationOrangeFlower ease-in-out 2s;
   z-index: 2;
 }
 .story__article p {
@@ -179,29 +184,40 @@
   animation: mooveUpAnimation ease-in-out 2s;
   background-color: transparent;
 }
+#studio h2::before {
+  width: 203px;
+  height: 203px;
+}
+#studio h2::after {
+  width: 109px;
+  height: 109px;
+}
 #studio h2::before, #studio h2::after {
-  animation: rotatingFlowers 2s 2s linear infinite;
+  animation: rotatingFlowers var(--animation-duration) var(--animation-delay) linear infinite;
 }
 #studio > div::before {
   animation: mooveUpAnimation ease-in-out 2s;
 }
 
+.site-footer {
+  overflow: visible;
+}
+.site-footer::after {
+  bottom: 47em;
+  animation: rotatingFlowers var(--animation-duration) var(--animation-delay) linear infinite, mooveUpAnimationFlowersFooter ease-in-out 2s;
+}
 .site-footer::before {
   width: 155px;
   height: 155px;
+  top: -33em;
+  left: 5em;
+  animation: rotatingFlowers var(--animation-duration) var(--animation-delay) linear infinite, mooveUpAnimationFlowersFooter ease-in-out 2s;
 }
-
-.site-footer::before,
-.site-footer::after {
-  animation: rotatingFlowers 2s 2s linear infinite, mooveUpAnimationFlowersFooter ease-in-out 2s;
-}
-
-.site-footer ul::after {
-  animation: rotatingFlowers 2s 2s linear infinite, mooveUpAnimationFooter ease-in-out 2s;
-}
-
 .site-footer ul {
   animation: mooveUpAnimationFooter ease-in-out 2s;
+}
+.site-footer ul::after {
+  animation: rotatingFlowers var(--animation-duration) var(--animation-delay) linear infinite, mooveUpAnimationFooter ease-in-out 2s;
 }
 
 /* ANIMATIONS TITRES */
@@ -211,13 +227,42 @@
 
 .anim-titre-1 {
   display: inline-block;
-  animation: animationTitre1 2s ease;
+  animation: animationTitre1 1.5s ease;
 }
 
 .anim-titre-2 {
   display: inline-block;
   margin-left: 0.4em;
-  animation: animationTitre2 3s ease;
+  animation: animationTitre2 2s ease;
+}
+
+/* TEMPLATE NOMINATION OSCAR */
+.nomination {
+  padding: 160px 0 100px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.nomination .texte-oscar {
+  background-image: url("assets-images-videos/Rectangle 23.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0 35px 0px 70px;
+  width: 73%;
+  display: flex;
+}
+.nomination .texte-oscar p {
+  color: #FFF5E9;
+  font-family: "Quicksand", sans-serif;
+  font-size: 42px;
+  font-weight: bold;
+  display: flex;
+  padding: 5px;
+}
+.nomination .image-oscar {
+  margin: 3em 3em 0 0;
 }
 
 /*# sourceMappingURL=style.css.map */

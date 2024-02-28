@@ -1,4 +1,4 @@
-  // Animation du logo
+// Animation du logo
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -32,43 +32,75 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Fonction pour diviser le texte en mots et ajouter des spans avec la classe anim-titre + index du mot dans le titre
+// Fonction pour gérer les vitesses de rotation des fleurs
+
+document.addEventListener("DOMContentLoaded", function() {
+  var isScrolling = false;
+
+  window.addEventListener('scroll', function() {
+    isScrolling = true;
+
+    // Ajuste les propriétés lors du défilement
+    document.documentElement.style.setProperty('--animation-duration', '0.5s');
+    document.documentElement.style.setProperty('--animation-delay', '0s');
+
+    // Réinitialise les propriétés après un délai d'inactivité de défilement
+    clearTimeout(window.scrollTimeout);
+    window.scrollTimeout = setTimeout(function() {
+      isScrolling = false;
+      document.documentElement.style.setProperty('--animation-duration', '2s');
+      document.documentElement.style.setProperty('--animation-delay', '2s');
+    }, 200); 
+  });
+});
+
+
+
+
+
+
+
+// Fonction pour diviser le texte des titres en mots et ajouter des spans avec la classe anim-titre + index du mot dans le titre
+
 function splitTextIntoSpans(element) {
-  const text = element.textContent;
-  element.innerHTML = ''; // Effacer le texte d'origine
-  const words = text.split(' ');
-  words.forEach((word, index) => {
-    const span = document.createElement('span');
-    span.textContent = word;
-    if (index < words.length - 1) {
-      span.innerHTML += ' '; // Ajouter un espace entre les mots
-    }
-    span.classList.add(`anim-titre-${index + 1}`);
-    element.appendChild(span);
+
+  const text = element.textContent; // Extrait le contenu texte de l'élément passé en argument et le stocke dans la variable text / propriété native
+
+  element.innerHTML = ''; // Efface le contenu HTML de l'élément passé en argument. Cela prépare l'élément à être rempli de nouveau contenu / propriété native
+
+  const words = text.split(' '); // Méthode native / Divise la chaîne de texte en un tableau de mots en utilisant l'espace comme délimiteur. Les mots sont stockés dans un tableau appelé words.
+
+  words.forEach((word, index) => { // Méthode native / Itère sur chaque mot du tableau words. La fonction fléchée prend deux arguments, le mot actuel (word) et l'index du mot dans le tableau (index). 
+
+    const span = document.createElement('span'); // À chaque itération, un nouvel élément <span> est créé / fonction native.
+
+    span.textContent = word; // Le contenu texte de ce nouvel élément <span> est défini comme étant le mot actuel de l'itération.
+
+    span.classList.add(`anim-titre-${index + 1}`); // Méthode native / Ajout de classe à l'élément <span>. La classe est créée en concaténant la chaîne "anim-titre-" avec l'index incrémenté de 1.
+    element.appendChild(span); //L'élément <span> est ajouté à l'élément passé en argument.
   });
 }
 
 // Observer chaque élément individuellement
-const elementsToObserve = document.querySelectorAll('.anim-titre-initial');
+const elementsToObserve = document.querySelectorAll('.anim-titre-initial'); // Méthode native / Récupère tous les éléments du DOM qui ont la classe CSS "anim-titre-initial", les éléments seront observés pour leur visibilité.
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Ajout classe d'animation lorsque l'élément devient visible
-   
-
-      // Divisez le texte en mots et ajoutez des spans avec la classe anim-titre
+const observer = new IntersectionObserver(entries => { // Crée un nouvel objet IntersectionObserver, qui permet de surveiller le fait qu'un élément entre ou sort de la zone d'affichage (viewport).
+  entries.forEach(entry => { // Itèration sur les entrées (éléments observés) fournies par l'observateur.
+    if (entry.isIntersecting) { //On vérifie si l'élément observé est en intersection avec la zone d'affichage (visible à l'écran).
+    
+      // Appel de la fonction splitTextIntoSpans pour diviser le texte de l'élément en mots et ajouter des éléments <span> avec la classe anim-titre-idex+1.
       splitTextIntoSpans(entry.target);
 
-      // Arrêtez d'observer l'élément après ajout de la classe
+      // Arret de l'observation de l'élément après avoir ajouté les classes, car l'animation a été effectuée.
       observer.unobserve(entry.target);
 
+      // Retire la classe initiale
       entry.target.classList.remove('anim-titre-initial');
     }
   });
-}, { threshold: 1 }); // Se déclenche lorsque 50% de l'élément est visible
+}, { threshold: 0.9 }); // COnfiguration de l'observateur à 90% de l'affichage
 
-// Observer chaque élément individuellement
+// Itération sur tous les éléments récupérés avec querySelectorAll et observation de chaque élément individuellement.
 elementsToObserve.forEach(element => {
   observer.observe(element);
 });
