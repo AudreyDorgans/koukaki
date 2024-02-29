@@ -88,7 +88,7 @@ const observer = new IntersectionObserver(entries => { // Crée un nouvel objet 
   entries.forEach(entry => { // Itèration sur les entrées (éléments observés) fournies par l'observateur.
     if (entry.isIntersecting) { //On vérifie si l'élément observé est en intersection avec la zone d'affichage (visible à l'écran).
     
-      // Appel de la fonction splitTextIntoSpans pour diviser le texte de l'élément en mots et ajouter des éléments <span> avec la classe anim-titre-idex+1.
+      // Appel de la fonction separeTexteDansSpan pour diviser le texte de l'élément en mots et ajouter des éléments <span> avec la classe anim-titre-idex+1.
       separeTexteDansSpan(entry.target);
 
       // Arret de l'observation de l'élément après avoir ajouté les classes, car l'animation a été effectuée.

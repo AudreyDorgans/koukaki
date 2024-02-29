@@ -150,9 +150,36 @@ $animation-delay: 2s;
     }
 }
 
+@keyframes flottement {
+ 
+    0% {
+        transform: translate(0);
+    }
+    
+    20% {
+        transform: translate(3px, -3px);
+    }
+    
+    40% {
+        transform: translate(3px, 3px);
+    }
+    
+    60% {
+        transform: translate(-3px, 3px);
+    }
+    
+    80% {
+        transform: translate(-3px, -3px);
+    }
+    
+    100% {
+        transform: translate(0);
+    }         
+}
 
 
-/* ANIMATIONS SECTIONS ET FLEURS */
+
+/* ANIMATIONS SECTIONS ET FLEURS  + HEADER VIDEO */
 
 .site {
     overflow: hidden;
@@ -160,12 +187,23 @@ $animation-delay: 2s;
 
 
 .banner {
+    background-image: none;
     animation: mooveDownAnimation #{$animation-timing} $animation-duration;
     position: relative;
 
+    #background-video {
+        width: auto;
+        height: auto;
+        z-index: -1;
+        background-image: url(../foce/assets/images/banner.png) no-repeat;
+        background-size: cover;
+        position: absolute;
+        top:0;
+        left:0;
+    }
+
     img {
-        animation: mooveUpLogo #{$animation-timing} $animation-duration;
-        animation-iteration-count: 1;
+        animation: flottement 4s ease-in infinite alternate both, mooveUpLogo #{$animation-timing} $animation-duration;
         max-height: 100%;
     }
     .fixed {
@@ -329,6 +367,10 @@ $animation-delay: 2s;
         margin: 3em 3em 0 0;
     }
 }
+
+
+
+
 
 
 
