@@ -305,6 +305,7 @@ $animation-delay: 2s;
     width: 80%;
     margin: auto;
     flex-wrap: wrap;
+    animation: mooveUpAnimation #{$animation-timing} $animation-duration;
 
     .texte-oscar {
             background-image: url("assets-images-videos/Rectangle 23.png");  

@@ -35,10 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // Fonction pour gérer les vitesses de rotation des fleurs
 
 document.addEventListener("DOMContentLoaded", function() {
-  var isScrolling = false;
+  var scroll = false;
 
   window.addEventListener('scroll', function() {
-    isScrolling = true;
+    scroll = true;
 
     // Ajuste les propriétés lors du défilement
     document.documentElement.style.setProperty('--animation-duration', '0.5s');
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Réinitialise les propriétés après un délai d'inactivité de défilement
     clearTimeout(window.scrollTimeout);
     window.scrollTimeout = setTimeout(function() {
-      isScrolling = false;
+      scroll = false;
       document.documentElement.style.setProperty('--animation-duration', '2s');
       document.documentElement.style.setProperty('--animation-delay', '2s');
     }, 200); 
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Fonction pour diviser le texte des titres en mots et ajouter des spans avec la classe anim-titre + index du mot dans le titre
 
-function splitTextIntoSpans(element) {
+function separeTexteDansSpan(element) {
 
   const text = element.textContent; // Extrait le contenu texte de l'élément passé en argument et le stocke dans la variable text / propriété native
 
@@ -89,7 +89,7 @@ const observer = new IntersectionObserver(entries => { // Crée un nouvel objet 
     if (entry.isIntersecting) { //On vérifie si l'élément observé est en intersection avec la zone d'affichage (visible à l'écran).
     
       // Appel de la fonction splitTextIntoSpans pour diviser le texte de l'élément en mots et ajouter des éléments <span> avec la classe anim-titre-idex+1.
-      splitTextIntoSpans(entry.target);
+      separeTexteDansSpan(entry.target);
 
       // Arret de l'observation de l'élément après avoir ajouté les classes, car l'animation a été effectuée.
       observer.unobserve(entry.target);
