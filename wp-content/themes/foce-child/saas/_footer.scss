@@ -1,0 +1,30 @@
+.site-footer {
+
+    overflow: visible;
+
+    &::after {
+        bottom: 47em;
+        animation: rotatingFlowers var(--animation-duration-flower) var(--animation-delay) linear infinite,
+        mooveUpAnimationFlowersFooter #{$animation-timing} $animation-duration;
+    }
+
+    &::before {
+        width: 155px;
+        height: 155px;
+        top: -33em;
+        left: 5em;
+        animation: rotatingFlowers var(--animation-duration-flower) var(--animation-delay) linear infinite,
+        mooveUpAnimationFlowersFooter #{$animation-timing} $animation-duration;
+    }
+
+    ul {
+
+        animation: mooveUpAnimationFooter #{$animation-timing} $animation-duration;
+
+        &::after {
+            animation: rotatingFlowers var(--animation-duration-flower) var(--animation-delay) linear infinite,
+            mooveUpAnimationFooter #{$animation-timing} $animation-duration;
+        }
+    }
+
+}

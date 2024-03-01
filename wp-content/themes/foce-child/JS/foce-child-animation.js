@@ -1,6 +1,6 @@
 // Animation du logo
 
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("scroll", function () {
 
   var banner = document.querySelector(".banner");
   var logo = document.querySelector(".banner img");
@@ -8,55 +8,38 @@ document.addEventListener("DOMContentLoaded", function () {
   var bannerHeight = banner.offsetHeight;
   var logoHeight = logo.offsetHeight * 1.1;
 
-  var hasChanged = false;
+  var scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-  window.addEventListener("scroll", function () {
-
-    var scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-    if ((scrollTop > 0) && (scrollTop < bannerHeight - logoHeight)) {
+  if ((scrollTop > 0) && (scrollTop < bannerHeight - logoHeight)) {
       
-      if (!hasChanged) {
+        logo.classList.remove("absolute");
         logo.classList.add("fixed");
-        hasChanged = true;
-      }
 
     } else if (scrollTop >= bannerHeight - logoHeight) {
 
       logo.classList.remove("fixed");
       logo.classList.add("absolute");
-      hasChanged = true;
     } 
-    
-  });
 });
 
 
 // Fonction pour gérer les vitesses de rotation des fleurs
 
-document.addEventListener("DOMContentLoaded", function() {
-  var scroll = false;
+window.addEventListener('scroll', function() {
 
-  window.addEventListener('scroll', function() {
-    scroll = true;
 
     // Ajuste les propriétés lors du défilement
-    document.documentElement.style.setProperty('--animation-duration', '0.5s');
+    document.documentElement.style.setProperty('--animation-duration-flower', '1s');
     document.documentElement.style.setProperty('--animation-delay', '0s');
 
     // Réinitialise les propriétés après un délai d'inactivité de défilement
     clearTimeout(window.scrollTimeout);
     window.scrollTimeout = setTimeout(function() {
       scroll = false;
-      document.documentElement.style.setProperty('--animation-duration', '2s');
+      document.documentElement.style.setProperty('--animation-duration-flower', '6s');
       document.documentElement.style.setProperty('--animation-delay', '2s');
     }, 200); 
-  });
 });
-
-
-
-
 
 
 

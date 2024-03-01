@@ -1,0 +1,35 @@
+/********************
+TEMPLATE NOMINATION OSCAR 
+*********************/
+
+.nomination {
+    padding: 160px 0 100px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+    animation: mooveUpAnimation #{$animation-timing} $animation-duration;
+
+    .texte-oscar {
+        background-image: url("assets-images-videos/Rectangle 23.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 0 35px 0px 70px;
+        width: 73%;
+        display: flex;
+
+        p {
+            color: #FFF5E9;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 42px;
+            font-weight: bold;
+            display: flex;
+            padding: 5px;
+        }
+    }
+
+    .image-oscar {
+        margin: 3em 3em 0 0;
+    }
+}

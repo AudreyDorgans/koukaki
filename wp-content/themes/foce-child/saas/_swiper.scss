@@ -1,0 +1,40 @@
+#characters-swiper-mobile {
+    display:none;
+    width: 80%;
+    margin: 0 auto;
+    animation: mooveUpAnimation #{$animation-timing} $animation-duration;
+    
+   h3 {
+        text-align: left;
+        background-image: url("../foce/assets/images/orange_characters_bg.png");
+        background-position: left; 
+        padding:1em;
+    }
+
+    .swiper {
+        width: 100%;
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 500px;
+            height: 500px;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+
+            p {
+                text-align: center;
+                margin:0;
+            }
+        }
+    }   
+}
+
+
+
+
+
+

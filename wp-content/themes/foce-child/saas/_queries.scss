@@ -1,0 +1,25 @@
+@media all and (max-width: #{$breakpoint__laptop}) {
+
+}
+
+@media all and (max-width: #{$breakpoint__tablet}) {
+   
+}
+
+@media all and (max-width: #{$breakpoint__small_tablet}) {
+  
+}
+
+@media all and (max-width: #{$breakpoint__large_phone}) {
+
+    #characters {
+        display: none !important;
+    }
+
+    #characters-swiper-mobile {
+        display: block;
+    }
+}
+
+
+

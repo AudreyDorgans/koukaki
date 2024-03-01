@@ -16,20 +16,20 @@ get_header();
         </section>
         <section id="#story" class="story">
      
-                <h2><span class="anim-titre-initial">L'histoire</span></h2>
+            <h2><span class="anim-titre-initial">L'histoire</span></h2>
      
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
             <?php
-            $args = array(
-                'post_type' => 'characters',
-                'posts_per_page' => -1,
-                'meta_key'  => '_main_char_field',
-                'orderby'   => 'meta_value_num',
+                $args = array(
+                    'post_type' => 'characters',
+                    'posts_per_page' => -1,
+                    'meta_key'  => '_main_char_field',
+                    'orderby'   => 'meta_value_num',
 
-            );
-            $characters_query = new WP_Query($args);
+                );
+                $characters_query = new WP_Query($args);
             ?>
             <article id="characters">
                 <div class="main-character">
@@ -54,9 +54,14 @@ get_header();
                         echo'</figcaption>';
                         echo '</figure>';
                     }
-                    ?>
-                </div>
-            </article>
+                    ?>             
+                </div>          
+             </article>
+
+            <?php get_template_part( 'template-parts/swiper' ); ?>                        
+
+
+
             <article id="place">
                 <div>
                     <h3><span class="anim-titre-initial">Le Lieu</span></h3>
