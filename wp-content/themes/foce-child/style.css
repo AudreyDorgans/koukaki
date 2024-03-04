@@ -1,9 +1,14 @@
+.site {
+  overflow: hidden;
+}
+
 /*********************
 KEYFRAMES
 *********************/
 :root {
   --animation-duration-flower: 6s;
   --animation-delay: 2s;
+  --parallax: 0;
 }
 
 @keyframes mooveDownAnimation {
@@ -160,13 +165,9 @@ KEYFRAMES
     transform: translate(0);
   }
 }
-/************************
-ANIMATIONS SECTIONS ET FLEURS  + HEADER VIDEO 
-*************************/
-.site {
-  overflow: hidden;
-}
-
+/*********************
+GENERAL ET ANIMATIONS SECTIONS
+*********************/
 .banner {
   background-image: none;
   animation: mooveDownAnimation ease-in-out 2s;
@@ -218,18 +219,41 @@ ANIMATIONS SECTIONS ET FLEURS  + HEADER VIDEO
 .story__article p {
   z-index: 0;
 }
+.story #place {
+  position: relative;
+  background-image: url("assets-images-videos/Studio_Koukaki-image_place.png");
+}
+.story #place::before {
+  content: url("assets-images-videos/big_cloud.png");
+  position: absolute;
+  top: 12%;
+  right: 5%;
+  filter: blur(14px);
+  width: 316px;
+  height: 122px;
+  transform: translateX(var(--parallax));
+}
+.story #place::after {
+  content: url("assets-images-videos/little_cloud.png");
+  position: absolute;
+  top: 37%;
+  right: 35%;
+  filter: blur(14px);
+  width: 142px;
+  height: 55px;
+  transform: translateX(var(--parallax));
+}
+.story #place h3 {
+  animation: mooveUpAnimation ease-in-out 2s;
+}
+.story #place p {
+  animation: mooveDownAnimation ease-in-out 2s;
+}
 
 #characters,
 #place,
 #studio {
   animation: mooveUpAnimation ease-in-out 2s;
-}
-
-#place h3 {
-  animation: mooveUpAnimation ease-in-out 2s;
-}
-#place p {
-  animation: mooveDownAnimation ease-in-out 2s;
 }
 
 #studio h2 {
@@ -260,13 +284,13 @@ ANIMATIONS TITRES
 
 .anim-titre-1 {
   display: inline-block;
-  animation: animationTitre1 1.5s ease;
+  animation: animationTitre1 1s ease;
 }
 
 .anim-titre-2 {
   display: inline-block;
   margin-left: 0.4em;
-  animation: animationTitre2 2s ease;
+  animation: animationTitre2 1.5s ease;
 }
 
 /********************

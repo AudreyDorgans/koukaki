@@ -1,15 +1,389 @@
-/*
-Theme Name: Twenty Twenty-Three
-Theme URI: https://wordpress.org/themes/twentytwentythree
-Author: the WordPress team
-Author URI: https://wordpress.org
-Description: Twenty Twenty-Three is designed to take advantage of the new design tools introduced in WordPress 6.1. With a clean, blank base as a starting point, this default theme includes ten diverse style variations created by members of the WordPress community. Whether you want to build a complex or incredibly simple website, you can do it quickly and intuitively through the bundled styles or dive into creation and full customization yourself.
-Requires at least: 6.1
-Tested up to: 6.4
-Requires PHP: 5.6
-Version: 1.3
-License: GNU General Public License v2 or later
-License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-Text Domain: twentytwentythree
-Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
-*/
+.site {
+  overflow: hidden;
+}
+
+/*********************
+KEYFRAMES
+*********************/
+:root {
+  --animation-duration-flower: 6s;
+  --animation-delay: 2s;
+  --parallax-before: 0;
+  --parallax-after: 0;
+}
+
+@keyframes mooveDownAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes mooveUpLogo {
+  0% {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  25%, 40% {
+    opacity: 0.25;
+  }
+  55% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes mooveUpAnimation {
+  0% {
+    opacity: 0.5;
+    transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes mooveUpAnimationOrangeFlower {
+  0% {
+    opacity: 0.7;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes mooveUpAnimationLeavesOrangeFlower {
+  0% {
+    opacity: 0.7;
+    transform: translateY(55%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes mooveUpAnimationFooter {
+  0% {
+    opacity: 0.5;
+    transform: translateY(200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(2%);
+  }
+}
+@keyframes mooveUpAnimationFlowersFooter {
+  0% {
+    opacity: 0.5;
+    transform: translateY(200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes rotatingFlowers {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animationTitre1 {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(90%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes animationTitre2 {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(90%);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(80%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes flottement {
+  0% {
+    transform: translate(0);
+  }
+  5% {
+    transform: translate(2px, 8px);
+  }
+  10% {
+    transform: translate(2px, 16px);
+  }
+  20% {
+    transform: translate(8px, 24px);
+  }
+  30% {
+    transform: translate(4px, 20px);
+  }
+  40% {
+    transform: translate(2px, 16px);
+  }
+  50% {
+    transform: translate(0px, 10px);
+  }
+  60% {
+    transform: translate(-4px, 16px);
+  }
+  70% {
+    transform: translate(-1px, 10px);
+  }
+  80% {
+    transform: translate(-2px, 6px);
+  }
+  90% {
+    transform: translate(1px, 2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+/*********************
+GENERAL ET ANIMATIONS SECTIONS
+*********************/
+.banner {
+  background-image: none;
+  animation: mooveDownAnimation ease-in-out 2s;
+  position: relative;
+}
+.banner #background-video {
+  width: auto;
+  height: auto;
+  z-index: -1;
+  background: url(../foce/assets/images/banner.png) no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.banner img {
+  animation: flottement 6s 2s ease-in infinite alternate both, mooveUpLogo ease-in-out 2s;
+  max-height: 100%;
+}
+.banner .fixed {
+  position: fixed;
+  max-width: 720px;
+  top: 31.5%;
+}
+.banner .absolute {
+  position: absolute;
+  bottom: 26px;
+  max-width: 720px;
+}
+
+.story h2 {
+  width: 100%;
+  z-index: 1;
+  animation: mooveUpAnimation ease-in-out 2s;
+  background-color: transparent;
+}
+.story h2::after {
+  width: 155px;
+  height: 155px;
+  animation: rotatingFlowers var(--animation-duration-flower) var(--animation-delay) linear infinite;
+}
+.story__article::before {
+  animation: mooveUpAnimationLeavesOrangeFlower ease-in-out 2s;
+}
+.story__article::after {
+  animation: rotatingFlowers var(--animation-duration-flower) var(--animation-delay) linear infinite, mooveUpAnimationOrangeFlower ease-in-out 2s;
+  z-index: 2;
+}
+.story__article p {
+  z-index: 0;
+}
+.story #place {
+  position: relative;
+  background-image: url("assets-images-videos/Studio_Koukaki-image_place.png");
+}
+.story #place::before {
+  content: url("assets-images-videos/big_cloud.png");
+  position: absolute;
+  top: 12%;
+  right: 5%;
+  filter: blur(14px);
+  width: 316px;
+  height: 122px;
+  transform: translateX(var(--parallax-before));
+}
+.story #place::after {
+  content: url("assets-images-videos/little_cloud.png");
+  position: absolute;
+  top: 37%;
+  right: 35%;
+  filter: blur(14px);
+  width: 142px;
+  height: 55px;
+  transform: translateX(var(--parallax-after));
+}
+.story #place h3 {
+  animation: mooveUpAnimation ease-in-out 2s;
+}
+.story #place p {
+  animation: mooveDownAnimation ease-in-out 2s;
+}
+
+#characters,
+#place,
+#studio {
+  animation: mooveUpAnimation ease-in-out 2s;
+}
+
+#studio h2 {
+  animation: mooveUpAnimation ease-in-out 2s;
+  background-color: transparent;
+}
+#studio h2::before {
+  width: 203px;
+  height: 203px;
+}
+#studio h2::after {
+  width: 109px;
+  height: 109px;
+}
+#studio h2::before, #studio h2::after {
+  animation: rotatingFlowers var(--animation-duration-flower) var(--animation-delay) linear infinite;
+}
+#studio > div::before {
+  animation: mooveUpAnimation ease-in-out 2s;
+}
+
+/**********************
+ANIMATIONS TITRES 
+***********************/
+.anim-titre-initial {
+  opacity: 0;
+}
+
+.anim-titre-1 {
+  display: inline-block;
+  animation: animationTitre1 1.5s ease;
+}
+
+.anim-titre-2 {
+  display: inline-block;
+  margin-left: 0.4em;
+  animation: animationTitre2 2s ease;
+}
+
+/********************
+TEMPLATE NOMINATION OSCAR 
+*********************/
+.nomination {
+  padding: 160px 0 100px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap;
+  animation: mooveUpAnimation ease-in-out 2s;
+}
+.nomination .texte-oscar {
+  background-image: url("assets-images-videos/Rectangle 23.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0 35px 0px 70px;
+  width: 73%;
+  display: flex;
+}
+.nomination .texte-oscar p {
+  color: #FFF5E9;
+  font-family: "Quicksand", sans-serif;
+  font-size: 42px;
+  font-weight: bold;
+  display: flex;
+  padding: 5px;
+}
+.nomination .image-oscar {
+  margin: 3em 3em 0 0;
+}
+
+#characters-swiper-mobile {
+  display: none;
+  width: 80%;
+  margin: 0 auto;
+  animation: mooveUpAnimation ease-in-out 2s;
+}
+#characters-swiper-mobile h3 {
+  text-align: left;
+  background-image: url("../foce/assets/images/orange_characters_bg.png");
+  background-position: left;
+  padding: 1em;
+}
+#characters-swiper-mobile .swiper {
+  width: 100%;
+}
+#characters-swiper-mobile .swiper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 500px;
+  height: 500px;
+}
+#characters-swiper-mobile .swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+}
+#characters-swiper-mobile .swiper .swiper-slide p {
+  text-align: center;
+  margin: 0;
+}
+
+.site-footer {
+  overflow: visible;
+}
+.site-footer::after {
+  bottom: 47em;
+  animation: rotatingFlowers var(--animation-duration-flower) var(--animation-delay) linear infinite, mooveUpAnimationFlowersFooter ease-in-out 2s;
+}
+.site-footer::before {
+  width: 155px;
+  height: 155px;
+  top: -33em;
+  left: 5em;
+  animation: rotatingFlowers var(--animation-duration-flower) var(--animation-delay) linear infinite, mooveUpAnimationFlowersFooter ease-in-out 2s;
+}
+.site-footer ul {
+  animation: mooveUpAnimationFooter ease-in-out 2s;
+}
+.site-footer ul::after {
+  animation: rotatingFlowers var(--animation-duration-flower) var(--animation-delay) linear infinite, mooveUpAnimationFooter ease-in-out 2s;
+}
+
+@media all and (max-width: 700px) {
+  #characters {
+    display: none !important;
+  }
+  #characters-swiper-mobile {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

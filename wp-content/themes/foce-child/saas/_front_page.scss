@@ -1,3 +1,6 @@
+.site {
+    overflow: hidden;
+}
 
 
 /*********************
@@ -10,11 +13,15 @@ $animation-duration: 2s;
 $animation-duration-flower: 6s;
 $animation-duration-titre: 3s;
 $animation-delay: 2s;
+$parallax: 0;
+
 
 // Conversion des variables SCSS en variables CSS
 :root {
     --animation-duration-flower: #{$animation-duration-flower};
     --animation-delay: #{$animation-delay};
+    --parallax: #{$parallax};
+
 }
 
 @keyframes mooveDownAnimation {
@@ -207,13 +214,9 @@ $animation-delay: 2s;
 
 
 
-/************************
-ANIMATIONS SECTIONS ET FLEURS  + HEADER VIDEO 
-*************************/
-
-.site {
-    overflow: hidden;
-}
+/*********************
+GENERAL ET ANIMATIONS SECTIONS
+*********************/
 
 
 .banner {
@@ -276,21 +279,47 @@ ANIMATIONS SECTIONS ET FLEURS  + HEADER VIDEO
             z-index: 0;
         }
     }
+
+    #place {
+        position: relative;
+        background-image: url('assets-images-videos/Studio_Koukaki-image_place.png');
+
+        &::before {
+                content: url('assets-images-videos/big_cloud.png');
+                position: absolute;
+                top: 12%;
+                right: 5%;
+                filter: blur(14px);
+                width: 316px;
+                height: 122px;
+                transform: translateX(var(--parallax));
+            }
+        
+            &::after {
+                content: url('assets-images-videos/little_cloud.png');
+                position: absolute;
+                top: 37%;
+                right: 35%;
+                filter: blur(14px);
+                width : 142px;
+                height : 55px;
+                transform: translateX(var(--parallax));
+            }
+         
+        h3 {
+            animation: mooveUpAnimation #{$animation-timing} $animation-duration;
+        }   
+    
+        p {
+            animation: mooveDownAnimation #{$animation-timing} $animation-duration;
+        }
+    }
 }
 
 #characters,
 #place,
 #studio {
     animation: mooveUpAnimation #{$animation-timing} $animation-duration;
-}
-
-#place {
-    h3 {
-        animation: mooveUpAnimation #{$animation-timing} $animation-duration;
-    }
-    p {
-        animation: mooveDownAnimation #{$animation-timing} $animation-duration;
-    }
 }
 
 #studio {
@@ -329,13 +358,13 @@ ANIMATIONS TITRES
 
 .anim-titre-1 {
     display: inline-block;
-    animation: animationTitre1 1.5s ease;
+    animation: animationTitre1 1s ease;
 }
 
 .anim-titre-2 {
     display: inline-block;
     margin-left:0.4em;
-    animation: animationTitre2 2s ease;
+    animation: animationTitre2 1.5s ease;
 }
 
 
