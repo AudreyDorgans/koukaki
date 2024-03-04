@@ -63,12 +63,12 @@ titresAObserver.forEach(element => {
 // ANIMATION NUAGES
 function scrollParallax() {
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
-  let parallaxValeur = Math.min(scrollTop * 0.2, 450); 
+  let parallaxValeur = Math.min(scrollTop * 0.1, 300);
   parallaxValeur = Math.max(parallaxValeur, 0); 
-  document.documentElement.style.setProperty('--parallax', -parallaxValeur + 'px');
+  document.documentElement.style.setProperty('--parallax', parallaxValeur + 'px');
 }
 
-const placeElement = document.getElementById('place');
+const placeElement = document.querySelector('#place');
 let ecouteurAttache = false; 
 
 const placeObserver = new IntersectionObserver(function (entries) {
