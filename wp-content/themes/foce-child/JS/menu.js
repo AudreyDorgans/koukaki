@@ -11,10 +11,10 @@ burger.addEventListener('click', () => {
 
   spanElements.forEach(spanElement => {
     if (isMenuActive) {
-      setTimeout(() => {
+ 
         spanElement.classList.remove("anim-titre-menu-charge");
         spanElement.classList.add("anim-titre-menu-initial");
-      }, 2100); 
+
     } else {
       setTimeout(() => {
         spanElement.classList.remove("anim-titre-menu-initial");
