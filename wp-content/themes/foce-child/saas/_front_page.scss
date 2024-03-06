@@ -354,15 +354,14 @@ ANIMATIONS TITRES
 
 .anim-titre-initial {
     opacity: 0;
+    display: inline-block;
 }
 
 .anim-titre-1 {
-    display: inline-block;
     animation: animationTitre1 1s ease;
 }
 
 .anim-titre-2 {
-    display: inline-block;
     margin-left:0.4em;
     animation: animationTitre2 1.5s ease;
 }

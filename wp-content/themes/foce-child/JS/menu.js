@@ -1,15 +1,34 @@
-// Récupérez l'élément avec l'id "nav-icon4"
-var navIcon = document.getElementById("nav-icon4");
+const burger = document.querySelector('.main-navigation .burger');
+const menuNavigation = document.querySelector('.menu-navigation');
+const spanElements = document.querySelectorAll('.menu-navigation ul li span');
 
-// Ajoutez un écouteur d'événements de clic à l'élément
-navIcon.addEventListener("click", function() {
-    // Vérifiez si l'élément a déjà la classe "open"
-    var isOpen = navIcon.classList.contains("open");
+burger.addEventListener('click', () => {
+  const isMenuActive = burger.classList.contains('active');
 
-    // Si l'élément a la classe "open", retirez-la; sinon, ajoutez-la
-    if (isOpen) {
-        navIcon.classList.remove("open");
+  burger.classList.toggle('active');
+  menuNavigation.classList.toggle("inactif-menu", isMenuActive);
+  menuNavigation.classList.toggle("actif-menu", !isMenuActive);
+
+  spanElements.forEach(spanElement => {
+    if (isMenuActive) {
+      setTimeout(() => {
+        spanElement.classList.remove("anim-titre-menu-charge");
+        spanElement.classList.add("anim-titre-menu-initial");
+      }, 2100); 
     } else {
-        navIcon.classList.add("open");
+      setTimeout(() => {
+        spanElement.classList.remove("anim-titre-menu-initial");
+        spanElement.classList.add("anim-titre-menu-charge");
+      }, 2100); 
+    
     }
+  });
 });
+
+
+  
+
+
+
+
+

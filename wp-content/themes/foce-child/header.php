@@ -28,25 +28,39 @@
 	<header id="masthead" class="site-header">
 		
   <div class="main-navigation">
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title" id ="site-title" el="home"><?php bloginfo( 'name' ); ?></a> 
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-title-menu" id ="site-title" el="home"><?php bloginfo( 'name' ); ?></a> 
     <!-- burger -->
-    <div id="nav-icon">
-      <span></span>
-      <span></span>
+    <div class="burger">
       <span></span>
     </div>
-  </div>
+</div>
 
-  <div class="menu-navigation">
+<div class="menu-navigation inactif-menu">
     
-  <img src="<?php echo get_template_directory_uri() . '../../foce-child/assets-images-videos/LOGO.png'; ?> " alt="logo Fleurs d'oranger & chats errants" id="logo-child-mobile">
+  <img src="<?php echo get_template_directory_uri() . '../../foce-child/assets-images-videos/LOGO.png'; ?> " alt="logo Fleurs d'oranger & chats errants" id="logo-full-menu">
 
     <nav id="nav-enfant">
       <ul>
-        <li><a href="#story" id="histoire">Histoire</a></li>
-        <li ><a href="#characters" id="persos">Personnages</a></li>
-        <li ><a href="#place" id="lieu">Lieu</a></li>
-        <li><a href="#studio" id="studio-child">Studio Koukaki</a></li>
+        <li id="li1">
+              
+            <a href="#story" id="histoire"><span class="anim-titre-menu-initial">Histoire </a>
+         
+        </li>
+        <li id="li2">
+         
+            <a href="#characters" id="persos"> <span class="anim-titre-menu-initial">Personnages</span></a>
+          </span>
+        </li>
+        <li id="li3">
+         
+            <a href="#place" id="lieu"> <span class="anim-titre-menu-initial">  Lieu  </span></a>
+        
+        </li>
+        <li id="li4">
+         
+            <a href="#studio" id="studio-child"> <span class="anim-titre-menu-initial">Studio Koukaki    </span></a>
+      
+        </li>
       </ul>
     </nav><!-- #site-navigation -->
   
