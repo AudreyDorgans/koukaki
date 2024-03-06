@@ -1,3 +1,156 @@
+html, body, #page, .site, header {
+  min-height: 100%;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  max-width: 1440px;
+}
+.site-header .main-navigation #site-title {
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+  text-align: center;
+  padding-top: 20px;
+}
+.site-header .main-navigation #site-title:hover {
+  color: black;
+}
+.site-header .main-navigation #nav-icon {
+  width: 40px;
+  height: 30px;
+  position: absolute;
+  top: 22px;
+  right: 40px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.site-header .main-navigation #nav-icon span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: black;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+.site-header .main-navigation #nav-icon span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+.site-header .main-navigation #nav-icon span:nth-child(2) {
+  top: 14px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+.site-header .main-navigation #nav-icon span:nth-child(3) {
+  top: 28px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+.site-header .main-navigation #nav-icon.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -8px;
+  left: 8px;
+}
+.site-header .main-navigation #nav-icon.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+.site-header .main-navigation #nav-icon.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 21px;
+  left: 8px;
+}
+.site-header .menu-navigation {
+  min-width: 100%;
+  height: 100%;
+  background-color: #FFF5E9;
+  position: absolute;
+  top: 80px;
+  right: 0;
+}
+.site-header .menu-navigation #logo-child-mobile {
+  display: block;
+  margin: 3% auto 1%;
+}
+.site-header .menu-navigation #nav-enfant {
+  width: 100%;
+}
+.site-header .menu-navigation #nav-enfant ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-header .menu-navigation #nav-enfant ul #histoire, .site-header .menu-navigation #nav-enfant ul #persos, .site-header .menu-navigation #nav-enfant ul #lieu, .site-header .menu-navigation #nav-enfant ul #studio-child {
+  text-decoration: none;
+  font-size: 4em;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.site-header .menu-navigation #nav-enfant ul #histoire:hover, .site-header .menu-navigation #nav-enfant ul #persos:hover, .site-header .menu-navigation #nav-enfant ul #lieu:hover, .site-header .menu-navigation #nav-enfant ul #studio-child:hover {
+  color: black;
+}
+.site-header .menu-navigation #nav-enfant ul #histoire {
+  background-image: url("assets-images-videos/purple_title_bg.png");
+  width: 36%;
+  padding: 4%;
+}
+.site-header .menu-navigation #nav-enfant ul #persos {
+  background-image: url("assets-images-videos/orange_characters_bg.png");
+  width: 40%;
+  padding: 4%;
+}
+.site-header .menu-navigation #nav-enfant ul #lieu {
+  background-image: url("assets-images-videos/orange_place_bg.png");
+  width: 27%;
+  padding: 4%;
+}
+.site-header .menu-navigation #nav-enfant ul #studio-child {
+  background-image: url("assets-images-videos/purple_studio_bg.png");
+  width: 40%;
+  padding: 3%;
+}
+.site-header .menu-navigation #lien-type-footer {
+  display: block;
+  margin: 0 auto;
+}
+
 .site {
   overflow: hidden;
 }
@@ -227,7 +380,7 @@ GENERAL ET ANIMATIONS SECTIONS
   content: url("assets-images-videos/big_cloud.png");
   position: absolute;
   top: 12%;
-  left: 30%;
+  left: 34%;
   filter: blur(14px);
   width: 316px;
   height: 122px;
@@ -237,7 +390,7 @@ GENERAL ET ANIMATIONS SECTIONS
   content: url("assets-images-videos/little_cloud.png");
   position: absolute;
   top: 37%;
-  left: 18%;
+  left: 24%;
   filter: blur(14px);
   width: 142px;
   height: 55px;
