@@ -1,5 +1,6 @@
 var swiper = new Swiper(".mySwiper", {
   speed:1000,
+  freeMode: true,
   
   effect: "coverflow",
     coverflowEffect: {
@@ -9,14 +10,13 @@ var swiper = new Swiper(".mySwiper", {
       slideShadows: false,
     },
 
-    loop:true,
+    loop: true,
     slidesPerView: 3,
 
     autoplay: {
     delay: 2500,
     disableOnInteraction: false,
     },
-    
 });
 
 

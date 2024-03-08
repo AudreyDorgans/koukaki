@@ -223,6 +223,7 @@ GENERAL ET ANIMATIONS SECTIONS
     background-image: none;
     animation: mooveDownAnimation #{$animation-timing} $animation-duration;
     position: relative;
+    max-height: 806px;
 
     #background-video {
         width: auto;

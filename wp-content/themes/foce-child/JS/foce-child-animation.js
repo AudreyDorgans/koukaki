@@ -5,13 +5,16 @@ window.addEventListener("scroll", function () {
 
   const bannerHeight = banner.offsetHeight;
   const logoHeight = logo.offsetHeight * 1.1;
+  const navHeight = 80;
 
   const scrollTopLogo = window.scrollY || document.documentElement.scrollTop;
 
-  if ((scrollTopLogo  > 0) && (scrollTopLogo  < bannerHeight - logoHeight)) {
+  if ((scrollTopLogo  > 0) && (scrollTopLogo  < bannerHeight - logoHeight - navHeight)) {
+    
     logo.classList.remove("absolute");
     logo.classList.add("fixed");
-  } else if (scrollTopLogo  >= bannerHeight - logoHeight) {
+  } else if (scrollTopLogo  >= bannerHeight - logoHeight - navHeight) {
+    
     logo.classList.remove("fixed");
     logo.classList.add("absolute");
   }

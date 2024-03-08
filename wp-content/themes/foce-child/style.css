@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @keyframes entreeFadeMenu {
   0% {
     opacity: 0.8;
@@ -35,7 +36,9 @@ html, body, #page, .site, header {
   display: block;
   width: 50%;
   text-align: center;
-  padding-top: 26px;
+  padding-top: 1em;
+  font-weight: 700;
+  font-size: 1.5em;
 }
 .site-header .main-navigation #site-title:hover {
   color: black;
@@ -104,7 +107,7 @@ html, body, #page, .site, header {
 .site-header .menu-navigation #logo-full-menu {
   display: block;
   margin: 2% auto 4%;
-  animation: flottement 6s ease-in infinite alternate both;
+  animation: flottement 8s ease-in infinite alternate both;
 }
 .site-header .menu-navigation #nav-enfant {
   width: 100%;
@@ -142,7 +145,7 @@ html, body, #page, .site, header {
   position: absolute;
   top: -110%;
   left: 20%;
-  animation: flottement 4s ease-in infinite alternate both;
+  animation: flottement 6s ease-in infinite alternate both;
 }
 .site-header .menu-navigation #nav-enfant ul #li2:after {
   content: url("assets-images-videos/random_flower.png");
@@ -401,6 +404,7 @@ GENERAL ET ANIMATIONS SECTIONS
   background-image: none;
   animation: mooveDownAnimation ease-in-out 2s;
   position: relative;
+  max-height: 806px;
 }
 .banner #background-video {
   width: auto;
@@ -554,7 +558,6 @@ TEMPLATE NOMINATION OSCAR
 }
 
 #characters-swiper-mobile {
-  display: none;
   width: 80%;
   margin: 0 auto;
   animation: mooveUpAnimation ease-in-out 2s;
@@ -604,13 +607,236 @@ TEMPLATE NOMINATION OSCAR
   animation: rotatingFlowers var(--animation-duration-flower) var(--animation-delay) linear infinite, mooveUpAnimationFooter ease-in-out 2s;
 }
 
+/****************************
+/****************************
+RESPONSIVE BREAKPOINT 1192px
+/****************************
+*****************************/
+@media all and (max-width: 1192px) {
+  /********************
+  Général Front-page
+  *********************/
+  h2 {
+    font-size: 3em;
+  }
+  /********************
+  Header - navigation
+  *********************/
+  .site-header .menu-navigation #logo-full-menu {
+    margin: 2% auto 6%;
+  }
+  .site-header .menu-navigation #nav-enfant ul li #histoire,
+  .site-header .menu-navigation #nav-enfant ul li #persos,
+  .site-header .menu-navigation #nav-enfant ul li #lieu,
+  .site-header .menu-navigation #nav-enfant ul li #studio-child {
+    font-size: 3em;
+  }
+  .site-header .menu-navigation #lien-type-footer {
+    margin-top: 6%;
+  }
+  /********************
+  Front_page
+  *********************/
+  .banner img {
+    margin-top: -15%;
+  }
+  .story h2::before {
+    top: 3em;
+  }
+  .story h2::after {
+    left: 1em;
+    top: 10em;
+  }
+  #characters-swiper-mobile h3 {
+    margin-top: 2em;
+  }
+  /********************
+  Template nomination 
+  *********************/
+  .nomination .texte-oscar {
+    width: 65%;
+  }
+  .nomination .texte-oscar p {
+    font-size: 26px;
+    padding: 25px 0;
+  }
+}
+/****************************
+/****************************
+RESPONSIVE BREAKPOINT 1040 px
+/****************************
+*****************************/
+@media all and (max-width: 1040px) {
+  /********************
+  Header - navigation
+  ********************/
+  .site-header .menu-navigation #logo-full-menu {
+    margin: 2% auto 9%;
+  }
+  .site-header .menu-navigation #nav-enfant ul li #histoire,
+  .site-header .menu-navigation #nav-enfant ul li #persos,
+  .site-header .menu-navigation #nav-enfant ul li #lieu,
+  .site-header .menu-navigation #nav-enfant ul li #studio-child {
+    font-size: 2.5em;
+  }
+  .site-header .menu-navigation #lien-type-footer {
+    margin-top: 9%;
+  }
+  /********************
+  Front_page
+  *********************/
+  .banner img {
+    margin-top: -20%;
+  }
+  .story h2 {
+    animation: none;
+    margin: 1.5em 0 0 0;
+  }
+  .story h2::before {
+    top: 1em;
+  }
+  .story h2::after {
+    top: 8em;
+  }
+  .story__article {
+    padding-bottom: 0;
+  }
+  .story__article::before {
+    animation: none;
+    left: 42%;
+    top: 10em;
+  }
+  .story__article::after {
+    animation: rotatingFlowers var(--animation-duration-flower) var(--animation-delay) linear infinite;
+    left: calc(42% + 414px);
+    top: 2.5em;
+  }
+  #characters-swiper-mobile h3 {
+    margin-top: 2em;
+  }
+  .nomination {
+    overflow: visible;
+  }
+  .nomination .texte-oscar, .nomination .image-oscar {
+    width: 100%;
+  }
+  .nomination .texte-oscar p {
+    padding: 80px;
+  }
+  .nomination .image-oscar {
+    text-align: center;
+  }
+  .site-footer::before {
+    top: -43em;
+    left: 7em;
+  }
+}
+/****************************
+/****************************
+RESPONSIVE BREAKPOINT 920 px
+/****************************
+*****************************/
+@media all and (max-width: 920px) {
+  /********************
+  Header - navigation
+  *********************/
+  .site-header .menu-navigation #logo-full-menu {
+    margin: 5% auto 10%;
+  }
+  .site-header .menu-navigation #lien-type-footer {
+    margin-top: 10%;
+  }
+  /********************
+  Front_page
+  *********************/
+  .banner img {
+    margin-top: -25%;
+  }
+  .nomination .texte-oscar p {
+    padding: 50px;
+  }
+}
+/****************************
+/****************************
+RESPONSIVE BREAKPOINT 700 px
+/****************************
+*****************************/
 @media all and (max-width: 700px) {
-  #characters {
-    display: none !important;
+  .site-header .menu-navigation #nav-enfant ul #li1:after {
+    top: -200%;
+    right: 2%;
   }
-  #characters-swiper-mobile {
-    display: block;
+  .site-header .menu-navigation #nav-enfant ul #li1:before {
+    top: -160%;
+    left: -7%;
   }
+  .site-header .menu-navigation #nav-enfant ul #li2:before {
+    top: -80%;
+    left: 10%;
+  }
+  .site-header .menu-navigation #nav-enfant ul #li2:after {
+    top: -120%;
+    right: -16%;
+  }
+  .site-header .menu-navigation #nav-enfant ul #li3:before {
+    top: 55%;
+    left: 6%;
+  }
+  .site-header .menu-navigation #nav-enfant ul #li3:after {
+    bottom: -26%;
+    right: 5%;
+  }
+  .site-header .menu-navigation #nav-enfant ul #li4:before {
+    bottom: -50%;
+    left: 11%;
+  }
+  .site-header .menu-navigation #nav-enfant ul #li4:after {
+    right: -43%;
+    top: 75%;
+  }
+  .site-header .menu-navigation #nav-enfant ul li #histoire,
+  .site-header .menu-navigation #nav-enfant ul li #persos,
+  .site-header .menu-navigation #nav-enfant ul li #lieu,
+  .site-header .menu-navigation #nav-enfant ul li #studio-child {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  /********************
+  Front_page
+  *********************/
+  .banner img {
+    margin-top: -30%;
+  }
+  /********************
+  Template nomination 
+  *********************/
+  .nomination {
+    padding-top: 80px;
+  }
+  .nomination .texte-oscar p {
+    font-size: 26px;
+    padding: 20px;
+  }
+}
+/****************************
+/****************************
+RESPONSIVE BREAKPOINT 480 px
+/****************************
+*****************************/
+.banner .fixed {
+  top: 53.5%;
+}
+
+.swiper {
+  max-height: 250px;
+}
+
+.nomination {
+  width: 100%;
+}
+.nomination .texte-oscar p {
+  font-size: 18px;
 }
 
 /*# sourceMappingURL=style.css.map */

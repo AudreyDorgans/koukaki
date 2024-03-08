@@ -41,8 +41,10 @@ html, body, #page, .site, header{
             display: block;
             width: 50%;
             text-align: center;
-            padding-top: 26px;
-    
+            padding-top: 1em;
+            font-weight: 700;
+            font-size:1.5em;
+
             &:hover {
                 color: black;
             }
@@ -125,7 +127,7 @@ html, body, #page, .site, header{
         #logo-full-menu{
             display: block;
             margin: 2% auto 4%;
-            animation: flottement 6s ease-in infinite alternate both;
+            animation: flottement 8s ease-in infinite alternate both;
         }
         
         #nav-enfant {
@@ -167,7 +169,7 @@ html, body, #page, .site, header{
                     position:absolute;
                     top:-110%;
                     left:20%;
-                    animation: flottement 4s ease-in infinite alternate both;
+                    animation: flottement 6s ease-in infinite alternate both;
                 }
 
                 #li2:after {
