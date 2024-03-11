@@ -49,8 +49,8 @@ Header - navigation
 Front_page
 *********************/
 
-    .banner img {
-        margin-top : -15%;
+    .banner {
+        padding: 2% 0;
     }
 
     .story h2 {
@@ -104,7 +104,7 @@ Header - navigation
         .menu-navigation {
     
             #logo-full-menu {
-                margin: 2% auto 9%;
+                margin: 2% auto 5%;
             }
     
             #nav-enfant ul li {
@@ -118,7 +118,7 @@ Header - navigation
             }
     
             #lien-type-footer {
-                margin-top: 9%;
+                margin-top: 5%;
             }
         }
     }
@@ -126,10 +126,6 @@ Header - navigation
 /********************
 Front_page
 *********************/
-
-    .banner img {
-        margin-top: -20%;
-    }
 
     .story {
 
@@ -206,21 +202,17 @@ RESPONSIVE BREAKPOINT 920 px
     .site-header .menu-navigation {
         
         #logo-full-menu {
-            margin: 5% auto 10%;
+            margin: 4% auto 7%;
         }
         #lien-type-footer {
-            margin-top: 10%;
+            margin-top: 5%;
         }
     }
 
     /********************
-    Front_page
+    Template nomination
     *********************/
     
-    .banner img {
-        margin-top: -25%;
-    }
-
     .nomination .texte-oscar p {
         padding: 50px;
     }
@@ -233,7 +225,22 @@ RESPONSIVE BREAKPOINT 700 px
 *****************************/
 
 @media all and (max-width: #{$breakpoint__large_phone}) {
+   
+    /********************
+     Header - Navigation
+    *********************/
 
+    .site-header .menu-navigation {
+        
+        #logo-full-menu {
+            margin: 4% auto;
+        }
+        
+        #lien-type-footer {
+            margin-top: 3%;
+            }
+        }
+    
     .site-header .menu-navigation #nav-enfant ul {
         
         #li1:after {
@@ -285,13 +292,7 @@ RESPONSIVE BREAKPOINT 700 px
             margin-top: 1em;
         }
     }
-    /********************
-    Front_page
-    *********************/
 
-    .banner img {
-        margin-top: -30%;
-    }
 
 
     /********************
@@ -318,18 +319,74 @@ RESPONSIVE BREAKPOINT 480 px
 /****************************
 *****************************/
 
-.banner .fixed {
-    top: 53.5%;
-}
+@media all and (max-width: 480px) {
 
-.swiper {
-    max-height: 250px;
-}
+    /* Header - navigation */
 
-.nomination {
-    width:100%;
+    .site-header .menu-navigation {
 
-    .texte-oscar p {
-        font-size: 18px;
+        #logo-full-menu {
+            margin: 10% auto 16%;
+        }
+
+        #nav-enfant ul {
+
+            #li1:after {
+                top: -250%;
+                right: -8%;
+            }
+
+            #li2:before {
+                top: -10%;
+                left: 0;
+            }
+
+            #li2:after {
+                top: -40%;
+                right: -25%;
+            }
+
+            #li3:after {
+                bottom: -240%;
+                right: -5%;
+            }
+
+
+            #li4:after, #li3:before {
+                display: none;
+            }
+            
+            li {
+                #histoire, #persos,#lieu,#studio-child {
+                font-size: 1.3em;
+                }
+            }
+        }
+
+        #lien-type-footer {
+            margin-top: 20%;
+        }
+    }
+
+    /* Front-page */
+
+    .banner {
+        padding : 5% 0;
+    }
+
+    /* Template swiper */
+
+    .swiper {
+        max-height: 250px;
+    }
+
+    /* Template nomination */
+
+    .nomination {
+        width:100%;
+
+        .texte-oscar p {
+            font-size: 18px;
+        }
     }
 }

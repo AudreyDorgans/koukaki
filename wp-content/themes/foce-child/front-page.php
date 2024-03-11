@@ -5,15 +5,17 @@ get_header();
 
 
     <main id="primary" class="site-main">
-        <section class="banner">
+        
+    <section class="banner">
             <video id="background-video" autoplay loop muted>
                 <?php
                     $video_path = get_stylesheet_directory_uri() . '/assets-images-videos/Studio+Koukaki-vidéo+header+sans+son+(1).mp4';
                 ?>
                 <source src="<?php echo $video_path; ?>" type="video/mp4">
             </video>
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants" class="is-sticky">
         </section>
+
         <section id="#story" class="story">
      
             <h2><span class="anim-titre-initial">L'histoire</span></h2>

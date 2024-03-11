@@ -231,7 +231,7 @@ html, body, #page, .site, header {
 }
 
 .site {
-  overflow: hidden;
+  overflow: clip;
 }
 
 /*********************
@@ -404,7 +404,7 @@ GENERAL ET ANIMATIONS SECTIONS
   background-image: none;
   animation: mooveDownAnimation ease-in-out 2s;
   position: relative;
-  max-height: 806px;
+  padding: 1%;
 }
 .banner #background-video {
   width: auto;
@@ -416,19 +416,17 @@ GENERAL ET ANIMATIONS SECTIONS
   top: 0;
   left: 0;
 }
-.banner img {
+.banner .is-sticky {
   animation: flottement 6s 2s ease-in infinite alternate both, mooveUpLogo ease-in-out 2s;
   max-height: 100%;
+  position: sticky;
+  top: 80px;
 }
-.banner .fixed {
-  position: fixed;
-  max-width: 720px;
-  top: 31.5%;
-}
-.banner .absolute {
-  position: absolute;
-  bottom: 26px;
-  max-width: 720px;
+@supports (position: sticky) {
+  .banner .is-sticky {
+    position: sticky;
+    top: 80px;
+  }
 }
 
 .story h2 {
@@ -637,8 +635,8 @@ RESPONSIVE BREAKPOINT 1192px
   /********************
   Front_page
   *********************/
-  .banner img {
-    margin-top: -15%;
+  .banner {
+    padding: 2% 0;
   }
   .story h2::before {
     top: 3em;
@@ -671,7 +669,7 @@ RESPONSIVE BREAKPOINT 1040 px
   Header - navigation
   ********************/
   .site-header .menu-navigation #logo-full-menu {
-    margin: 2% auto 9%;
+    margin: 2% auto 5%;
   }
   .site-header .menu-navigation #nav-enfant ul li #histoire,
   .site-header .menu-navigation #nav-enfant ul li #persos,
@@ -680,14 +678,11 @@ RESPONSIVE BREAKPOINT 1040 px
     font-size: 2.5em;
   }
   .site-header .menu-navigation #lien-type-footer {
-    margin-top: 9%;
+    margin-top: 5%;
   }
   /********************
   Front_page
   *********************/
-  .banner img {
-    margin-top: -20%;
-  }
   .story h2 {
     animation: none;
     margin: 1.5em 0 0 0;
@@ -741,17 +736,14 @@ RESPONSIVE BREAKPOINT 920 px
   Header - navigation
   *********************/
   .site-header .menu-navigation #logo-full-menu {
-    margin: 5% auto 10%;
+    margin: 4% auto 7%;
   }
   .site-header .menu-navigation #lien-type-footer {
-    margin-top: 10%;
+    margin-top: 5%;
   }
   /********************
-  Front_page
+  Template nomination
   *********************/
-  .banner img {
-    margin-top: -25%;
-  }
   .nomination .texte-oscar p {
     padding: 50px;
   }
@@ -762,6 +754,15 @@ RESPONSIVE BREAKPOINT 700 px
 /****************************
 *****************************/
 @media all and (max-width: 700px) {
+  /********************
+   Header - Navigation
+  *********************/
+  .site-header .menu-navigation #logo-full-menu {
+    margin: 4% auto;
+  }
+  .site-header .menu-navigation #lien-type-footer {
+    margin-top: 3%;
+  }
   .site-header .menu-navigation #nav-enfant ul #li1:after {
     top: -200%;
     right: 2%;
@@ -803,12 +804,6 @@ RESPONSIVE BREAKPOINT 700 px
     margin-top: 1em;
   }
   /********************
-  Front_page
-  *********************/
-  .banner img {
-    margin-top: -30%;
-  }
-  /********************
   Template nomination 
   *********************/
   .nomination {
@@ -824,19 +819,51 @@ RESPONSIVE BREAKPOINT 700 px
 RESPONSIVE BREAKPOINT 480 px
 /****************************
 *****************************/
-.banner .fixed {
-  top: 53.5%;
-}
-
-.swiper {
-  max-height: 250px;
-}
-
-.nomination {
-  width: 100%;
-}
-.nomination .texte-oscar p {
-  font-size: 18px;
+@media all and (max-width: 480px) {
+  /* Header - navigation */
+  .site-header .menu-navigation #logo-full-menu {
+    margin: 10% auto 16%;
+  }
+  .site-header .menu-navigation #nav-enfant ul #li1:after {
+    top: -250%;
+    right: -8%;
+  }
+  .site-header .menu-navigation #nav-enfant ul #li2:before {
+    top: -10%;
+    left: 0;
+  }
+  .site-header .menu-navigation #nav-enfant ul #li2:after {
+    top: -40%;
+    right: -25%;
+  }
+  .site-header .menu-navigation #nav-enfant ul #li3:after {
+    bottom: -240%;
+    right: -5%;
+  }
+  .site-header .menu-navigation #nav-enfant ul #li4:after, .site-header .menu-navigation #nav-enfant ul #li3:before {
+    display: none;
+  }
+  .site-header .menu-navigation #nav-enfant ul li #histoire, .site-header .menu-navigation #nav-enfant ul li #persos, .site-header .menu-navigation #nav-enfant ul li #lieu, .site-header .menu-navigation #nav-enfant ul li #studio-child {
+    font-size: 1.3em;
+  }
+  .site-header .menu-navigation #lien-type-footer {
+    margin-top: 20%;
+  }
+  /* Front-page */
+  .banner {
+    padding: 5% 0;
+  }
+  /* Template swiper */
+  .swiper {
+    max-height: 250px;
+  }
+  /* Template nomination */
+  .nomination {
+    width: 100%;
+  }
+  .nomination .texte-oscar p {
+    font-size: 18px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

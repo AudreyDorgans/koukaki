@@ -1,4 +1,4 @@
-// ANIMATION LOGO
+/* ANIMATION LOGO
 window.addEventListener("scroll", function () {
   const banner = document.querySelector(".banner");
   const logo = document.querySelector(".banner img");
@@ -18,7 +18,7 @@ window.addEventListener("scroll", function () {
     logo.classList.remove("fixed");
     logo.classList.add("absolute");
   }
-});
+}); */
 
 // ANIMATION FLEURS
 window.addEventListener('scroll', function() {

@@ -1,5 +1,5 @@
 .site {
-    overflow: hidden;
+    overflow: clip;
 }
 
 
@@ -223,7 +223,7 @@ GENERAL ET ANIMATIONS SECTIONS
     background-image: none;
     animation: mooveDownAnimation #{$animation-timing} $animation-duration;
     position: relative;
-    max-height: 806px;
+    padding:1%;
 
     #background-video {
         width: auto;
@@ -236,20 +236,20 @@ GENERAL ET ANIMATIONS SECTIONS
         left:0;
     }
 
-    img {
+    .is-sticky {
         animation: flottement 6s 2s ease-in infinite alternate both, mooveUpLogo #{$animation-timing} $animation-duration;
         max-height: 100%;
+        position: sticky;
+        top: 80px; 
     }
-    .fixed {
-        position: fixed;
-        max-width: 720px;
-        top: 31.5%;
+
+    @supports (position: sticky) {
+        .is-sticky {
+            position: sticky;
+            top: 80px; 
+        }
     }
-    .absolute {
-        position: absolute;
-        bottom: 26px;
-        max-width: 720px;
-    }
+    
 }
 
 .story {
