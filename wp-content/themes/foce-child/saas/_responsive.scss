@@ -160,23 +160,31 @@ Front_page
         }
     }
 
+/********************
+template swiper
+*********************/
+
     #characters-swiper-mobile h3 {
         margin-top: 2em;
     }
 
+/********************
+template nomination
+*********************/
+
     .nomination {
         overflow: visible;
 
-        .texte-oscar, .image-oscar {
-            width:100%;
+        .texte-oscar {
+            width:70%;
         }
 
         .texte-oscar p {
-            padding:80px;
+            padding: 16px 25px 16px 25px;
         }
 
         .image-oscar {
-            text-align:center;
+            width: 26%;
         }
         
     }
@@ -212,10 +220,14 @@ RESPONSIVE BREAKPOINT 920 px
     /********************
     Template nomination
     *********************/
-    
-    .nomination .texte-oscar p {
-        padding: 50px;
-    }
+
+        .nomination .texte-oscar {
+            width: 72%;
+
+            p {
+                padding: 19px 10px 19px 0px;
+            }
+        }
 }
 
 /****************************
@@ -305,10 +317,17 @@ RESPONSIVE BREAKPOINT 700 px
 
         .texte-oscar {
 
+            width:100%;
+
             p {
                 font-size: 26px;
                 padding: 20px;
             }
+        }
+
+        .image-oscar {
+            width:100%;
+            text-align: center;
         }
     }
 }
@@ -387,6 +406,8 @@ RESPONSIVE BREAKPOINT 480 px
 
         .texte-oscar p {
             font-size: 18px;
+            padding: 19px 30px 30px 0px;
+            text-align: center;
         }
     }
 }

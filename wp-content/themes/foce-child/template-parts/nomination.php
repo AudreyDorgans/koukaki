@@ -6,7 +6,7 @@
 
 <div class="image-oscar">
     <?php
-        $image_path = get_stylesheet_directory_uri() . '/assets-images-videos/18-courts-metrages-francais-d-animation-eligibles-aux-oscars-2021.png';
+        $image_path = get_stylesheet_directory_uri() . '/assets-images-videos/oscar.png';
     ?>
 
     <img src="<?php echo $image_path; ?>" alt="Logo du festival des Oscars de courts métrages">

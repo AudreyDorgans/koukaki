@@ -20,13 +20,10 @@ if ( get_stylesheet() !== get_template() ) {
 add_action( 'wp_enqueue_scripts', 'foce_child_scripts' );
 
 function foce_child_scripts() {
-
     wp_enqueue_script( 'menu', get_stylesheet_directory_uri()  . '/JS/menu.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'foce-child-animation', get_stylesheet_directory_uri()  . '/JS/foce-child-animation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'swiper-api', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'swiper-foce-child', get_stylesheet_directory_uri()  . '/JS/swiper.js', array(), _S_VERSION, true );
-
-
 }
 
 
