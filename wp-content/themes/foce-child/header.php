@@ -35,39 +35,27 @@
     </div>
 </div>
 
-<div class="menu-navigation inactif-menu">
-    
+<div class="menu-navigation inactif-menu"> 
   <img src="<?php echo get_template_directory_uri() . '../../foce-child/assets-images-videos/LOGO.png'; ?> " alt="logo Fleurs d'oranger & chats errants" id="logo-full-menu">
-
     <nav id="nav-enfant">
       <ul>
-        <li id="li1">
-              
-            <a href="#story" id="histoire"><span class="anim-titre-menu-initial">Histoire </a>
-         
+        <li id="li1">             
+            <a href="#story" id="histoire"><span class="anim-titre-menu-initial">Histoire </a>      
         </li>
-        <li id="li2">
-         
+        <li id="li2">     
             <a href="#characters" id="persos"> <span class="anim-titre-menu-initial">Personnages</span></a>
           </span>
         </li>
         <li id="li3">
-         
             <a href="#place" id="lieu"> <span class="anim-titre-menu-initial">  Lieu  </span></a>
-        
         </li>
         <li id="li4">
-         
             <a href="#studio" id="studio-child"> <span class="anim-titre-menu-initial">Studio Koukaki    </span></a>
-      
         </li>
       </ul>
     </nav><!-- #site-navigation -->
-  
     <a href="#" id="lien-type-footer">STUDIO KOUKAKI</a>
-
   </div>
-
 
 </header><!-- #masthead -->
 

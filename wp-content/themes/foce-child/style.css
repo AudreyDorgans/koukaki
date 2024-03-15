@@ -407,8 +407,8 @@ GENERAL ET ANIMATIONS SECTIONS
   padding: 1%;
 }
 .banner #background-video {
-  width: auto;
-  height: auto;
+  min-width: 100%;
+  min-height: 806px;
   z-index: -1;
   background: url(../foce/assets/images/banner.png) no-repeat;
   background-size: cover;
